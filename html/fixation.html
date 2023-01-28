@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" type="text/css" href="css\video.css" />
+<link rel="stylesheet" type="text/css" href="../css/video.css" />
 <link
   rel="stylesheet"
   href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -13,8 +13,9 @@
 />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 <link
-  href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500&display=swap"
+  href="https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/Anuphan/Anuphan.css"
   rel="stylesheet"
 />
 <script
@@ -24,18 +25,65 @@
 ></script>
 
 <body>
+  <script>
+    $("#exampleModal").modal({
+      show: true,
+    });
+  </script>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">F11</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">Please press "OK" before staring the test.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="video-background">
     <video
       autoplay
       loop="false"
-      src="Video\Fixation.mp4"
+      src="../Video/Fixation.mp4"
       muted="false"
       id="bg-video"
       volume="1"
+      type="video/mp4"
     ></video>
-    <audio autoplay id="myaudio" allow="autoplay">
-      <source src="Audio\Fixation_aud.mp3" type="audio/mpeg" />
-    </audio>
+    <audio
+      autoplay
+      loop="false"
+      allow="autoplay"
+      src="../Audio/Fixation.mp3"
+      type="audio/mpeg"
+    ></audio>
+
+    <!-- <audio id="myAudio" controls autoplay>
+     
+      <source src="D:\Competitive\NSC\Eye-MED\Eye-Tracking\eyeTracker-main\Audio\Fixation_aud.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio> -->
     <script>
       document.getElementById("myaudio").play();
     </script>
@@ -50,7 +98,7 @@
         btn.setAttribute("class", "btn btn-info next-test-btn");
         btn.style.fontSize = "40px";
         btn.style.borderRadius = "45px";
-        btn.style.fontFamily = "Fahkwang";
+        btn.style.fontFamily = "Anuphan";
         btn.addEventListener("click", function () {
           window.location.href = "proSaccade.html";
         });
